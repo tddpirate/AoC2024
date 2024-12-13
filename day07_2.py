@@ -30,16 +30,17 @@ class error(Exception):
 # Functions
 ########################################################################
 
+
 def intconcat(val1: int, val2: int) -> int:
     return int(str(val1) + str(val2))
 
 
 def recurtree(target: int, interim: int, args: List[int]) -> bool:
     """Recursive tree traversal.
-       At each node we try both + and *
-       Terminate with False if we overshoot the target value
-           and/or reach exactly the value but did not empty the args.
-       Recurse by calling recurtree(target, interim OP val, args[1:])
+    At each node we try both + and *
+    Terminate with False if we overshoot the target value
+        and/or reach exactly the value but did not empty the args.
+    Recurse by calling recurtree(target, interim OP val, args[1:])
     """
     if DEBUG2:
         sys.stdout.write(f"Entered recurtree with {target=} {interim=} {args=}\n")
@@ -64,7 +65,7 @@ if __name__ == "__main__":
     cntgood = 0
     sumgood = 0
 
-    for (lind, line) in enumerate(sys.stdin):
+    for lind, line in enumerate(sys.stdin):
         sline = line.strip()
         if len(sline) == 0:
             # Ignore empty lines, no special processing is needed.
@@ -94,7 +95,7 @@ if __name__ == "__main__":
     ########################################################################
     # Write out answer
     ########################################################################
-    answer =sumgood
+    answer = sumgood
     sys.stdout.write(f"\n\nANSWER ---> {answer=}\n")
 
 else:
